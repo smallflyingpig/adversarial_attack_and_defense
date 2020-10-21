@@ -29,6 +29,6 @@ class ConvNet(nn.Module):
         x = x.view(B, -1)
         x = self.dense_layers(x)
         x = self.classifier_layer(x)
-        x = nn.functional.log_softmax(x)
+        x = nn.functional.log_softmax(x, dim=1)
         return x
 
